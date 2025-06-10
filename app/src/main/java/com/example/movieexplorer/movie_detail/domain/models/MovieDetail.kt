@@ -48,5 +48,5 @@ data class Cast (
 ) {
     private val nameParks = name.split(" ", limit = 2)
     val firstName = nameParks[0]
-    val lastName = if(name.length > 1) nameParks[1] else ""
+    val lastName = if(nameParks.size > 1) nameParks[1] else ""
 }

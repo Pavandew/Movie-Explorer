@@ -42,23 +42,33 @@ class MovieDetailMapperImpl: ApiMapper<MovieDetail, MovieDetailDTO> {
             runtime = convertMinutesToHours(apiDto.runtime ?: 0)
         )
     }
-
-    private fun formatTimeStamp(pattern: String = "dd.MM.YY", time: String) : String {
-        val inputDateFormatter = SimpleDateFormat("yyyy-MM-dd't'HH:mm:ss.SSS'Z'", Locale.getDefault())
-
-        val outputDataFormatter = SimpleDateFormat(
-            pattern,
-            Locale.getDefault()
-        )
-
-        // Parse the input date String
-        val date = inputDateFormatter.parse(time)
-
-        // Format the parsed date to the desired pattern
-        val formattedDate = date?.let { outputDataFormatter.format(it) } ?: time
-
-        return formattedDate
+    private fun formatTimeStamp(pattern: String = "dd.MM.yy", time: String): String {
+        return try {
+            val inputDateFormatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.getDefault())
+            val outputDataFormatter = SimpleDateFormat(pattern, Locale.getDefault())
+            val date = inputDateFormatter.parse(time)
+            date?.let { outputDataFormatter.format(it) } ?: time
+        } catch (e: Exception) {
+            time
+        }
     }
+//    private fun formatTimeStamp(pattern: String = "dd.MM.YY", time: String) : String {
+//        val inputDateFormatter = SimpleDateFormat("yyyy-MM-dd't'HH:mm:ss.SSS'Z'", Locale.getDefault())
+//
+//        val outputDataFormatter = SimpleDateFormat(
+//            pattern,
+//            Locale.getDefault()
+//        )
+//
+//        // Parse the input date String
+//        val date = inputDateFormatter.parse(time)
+//
+//        // Format the parsed date to the desired pattern
+//        val formattedDate = date?.let { outputDataFormatter.format(it) } ?: time
+//
+//        return formattedDate
+//    }
+
     // This is for converting movie length in minutes to hours and minutes format
     private fun convertMinutesToHours(minutes: Int): String {
         val hours = minutes/60

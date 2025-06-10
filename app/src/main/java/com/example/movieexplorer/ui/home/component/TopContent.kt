@@ -63,7 +63,7 @@ fun TopContent(
             onError = {
                 it.result.throwable.printStackTrace()
             },
-            placeholder = painterResource(id = R.drawable.ic_launcher_background)
+            placeholder = painterResource(id = R.drawable.baseline_person_24)
         )
         // Movie detail
         MovieDetail(

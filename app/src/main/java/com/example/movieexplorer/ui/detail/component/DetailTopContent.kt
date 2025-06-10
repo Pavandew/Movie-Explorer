@@ -106,44 +106,44 @@ private fun MovieDetailComponent(
                 )
             }
 
-            // Card with a button to Play the movie and Watch Trailer
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = defaultPadding)
+        }
+        // Card with a button to Play the movie and Watch Trailer
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = defaultPadding)
+        ){
+            Card (
+                onClick = { },
+                modifier = Modifier.weight(1f),
+                shape = RoundedCornerShape(topStart = 30.dp, bottomStart = 30.dp),
             ){
-                Card (
-                    onClick = { },
-                    modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(topStart = 30.dp, bottomStart = 30.dp),
-                ){
-                    Row(
-                        modifier = Modifier.padding(4.dp)
-                    ) {
-                        Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = "play")
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(text = "Watch Now")
-                    }
-                }
-                Card(
-                    onClick = {},
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.White,
-                        contentColor = primaryLightHighContrast
-                    ),
-                    modifier = Modifier.weight(1f),
-                    shape = RoundedCornerShape(
-                        topEnd = 30.dp,
-                        bottomEnd = 30.dp
-                    )
+                Row(
+                    modifier = Modifier.padding(4.dp)
                 ) {
-                    Row(
-                        modifier = Modifier.padding(4.dp)
-                    ) {
-                        Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = "play")
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(text = "Watch Trailer")
-                    }
+                    Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = "play")
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(text = "Watch Now")
+                }
+            }
+            Card(
+                onClick = {},
+                colors = CardDefaults.cardColors(
+                    containerColor = Color.White,
+                    contentColor = primaryLightHighContrast
+                ),
+                modifier = Modifier.weight(1f),
+                shape = RoundedCornerShape(
+                    topEnd = 30.dp,
+                    bottomEnd = 30.dp
+                )
+            ) {
+                Row(
+                    modifier = Modifier.padding(4.dp)
+                ) {
+                    Icon(imageVector = Icons.Filled.PlayArrow, contentDescription = "play")
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(text = "Watch Trailer")
                 }
             }
         }

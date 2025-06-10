@@ -83,7 +83,8 @@ class DetailViewModel @Inject constructor(
                 }
             ) { movies ->  // When the movies are successfully fetched, update the state with the list of movies
                 _detailState.update {
-                    it.copy(isLoading = false,
+                    it.copy(
+                        isMovieLoading = false,
                         error = null,
                         movies = movies
                     )
