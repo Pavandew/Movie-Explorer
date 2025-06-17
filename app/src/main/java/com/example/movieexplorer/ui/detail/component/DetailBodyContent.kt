@@ -56,6 +56,7 @@ fun DetailBodyContent(
     onMovieClick: (Int) -> Unit,
     onActorClick: (Int) -> Unit,
 ) {
+    //
     LazyColumn (modifier){
         item {
             Card (

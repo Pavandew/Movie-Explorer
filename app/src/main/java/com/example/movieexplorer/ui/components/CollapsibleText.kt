@@ -32,7 +32,7 @@ fun CollapsibleText(
     // This is a simple text that can be expanded or collapsed
     val annotatedString = buildAnnotatedString {
         if(!isExpanded) {
-            withStyle(SpanStyle(color = Color.Blue)) {
+            withStyle(SpanStyle(color = Color.Green)) {
                 append("see more")
             }
 

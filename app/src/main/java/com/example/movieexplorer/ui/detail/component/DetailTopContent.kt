@@ -42,7 +42,7 @@ fun DetailTopContent(
     movieDetail: MovieDetail
 ) {
     val imgRequest = ImageRequest.Builder(LocalContext.current)
-        .data("{${Urls.BASE_IMAGE_URL}${movieDetail.posterPath}")
+        .data("${Urls.BASE_IMAGE_URL}${movieDetail.posterPath}")
         .crossfade(true)
         .build()
     Box(modifier = modifier.fillMaxWidth()) {

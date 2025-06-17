@@ -98,7 +98,7 @@ fun MovieDetail(
                     contentDescription = "Rating",
                     tint = Color.Yellow
                 )
-                Spacer(modifier = Modifier.width(4.dp))
+                Spacer(modifier = Modifier.width(itemSpacing))
                 Text(text = rating.toString())
             }
         }
